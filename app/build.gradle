@@ -1,0 +1,58 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 28
+    defaultConfig {
+        applicationId "com.edge.seven.re.up.taxi"
+        minSdkVersion 21
+        targetSdkVersion 28
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+    }
+    dataBinding {
+        enabled = true
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+
+    implementation "com.android.support:appcompat-v7:${versions.supportLibrary}"
+    implementation "com.android.support:support-v4:${versions.supportLibrary}"
+    implementation "com.android.support:cardview-v7:${versions.supportLibrary}"
+    implementation "com.android.support:design:${versions.supportLibrary}"
+    implementation "com.android.support:cardview-v7:${versions.supportLibrary}"
+    implementation 'com.android.support.constraint:constraint-layout:1.1.3'
+
+    implementation "com.github.bumptech.glide:glide:${versions.glide}"
+    annotationProcessor "com.github.bumptech.glide:compiler:${versions.glide}"
+
+    // butterknife
+    implementation 'com.jakewharton:butterknife:8.8.1'
+    annotationProcessor 'com.jakewharton:butterknife-compiler:8.8.1'
+
+    // epoxy (Easy recycler view bull crap)
+    implementation 'com.airbnb.android:epoxy:2.13.0'
+    annotationProcessor 'com.airbnb.android:epoxy-processor:2.13.0'
+    implementation 'com.airbnb.android:epoxy-databinding:2.13.0'
+
+    // litho (Interface shit)
+    implementation 'com.facebook.litho:litho-core:0.18.0'
+    implementation 'com.facebook.litho:litho-widget:0.18.0'
+    implementation 'com.facebook.soloader:soloader:0.5.1'
+    annotationProcessor 'com.facebook.litho:litho-processor:0.18.0'
+    implementation 'com.facebook.shimmer:shimmer:0.3.0'
+
+    implementation 'com.aurelhubert:ahbottomnavigation:2.1.0'
+
+    testImplementation 'junit:junit:4.12'
+    androidTestImplementation 'com.android.support.test:runner:1.0.2'
+    androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
+}
